@@ -11,48 +11,206 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="shortcut icon" href="https://www.svgrepo.com/show/373594/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/234201/portfolio-bag.svg" type="image/x-icon">
 
 </head>
 
 <body>
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Meu Portfólio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                <li class="nav-item"><a class="nav-link" href#habilidades">Habilidades</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            </ul>
-        </div>
-    </div>
-</nav> -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Meu Portifólio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul>
-                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Meu Portifólio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- esta classe faz os elementos se alinharem a esquerda, um ao lado do outro -->
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-    <!-- Seção Início -->
-    <!-- Seção Projetos -->
-    <!-- Seção Habilidades -->
-    <!-- Seção Sobre Mim -->
-    <!-- Seção Contato -->
-    <!-- Footer -->
+    <section id="inicio" class="bg-primary text-light py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Olá, eu sou Lucas Eduardo Travassos Machado</h1>
+                    <p class="lead">Acadêmico de ADS, fascinado por dados e pelas histórias que podem contar.</p>
+                    <a href="#projetos" class="btn btn-light btn-lg">Ver Projetos</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="img/lucas.jpg" class="img-fluid rounded-circle w-75" alt="Foto de perfil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="projetos" class="py-5">  
+        <div class="container">  
+            <h2 class="text-center mb-5">Meus Projetos</h2>  
+            <div class="row g-4">   
+                <div class="col-md-6 col-lg-4">  
+                    <div class="card h-100">  
+                        <img src="https://www.projetowebsite.com.br/template/images/criacao/criacao-de-site-padrao.jpg" class="card-img-top" alt="Projeto 1">  
+                        <div class="card-body">  
+                            <h5 class="card-title">Sistema de Gestão</h5>  
+                            <p class="card-text">Desenvolvido com React e Node.js para otimizar processos empresariais.</p>  
+                            <a href="#" class="btn btn-primary">Ver Detalhes</a>  
+                        </div>  
+                    </div>  
+                </div>  
+    </section> -->
+
+    <section id="projetos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Meus Projetos</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://dashboardacademy.com.br/wp-content/uploads/2023/09/inspiracao-para-dashboard-gerencial-modelo-3.png"
+                            class="card-img-top" alt="projeto1">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboards</h5>
+                            <p class="card-text">Desenvolvidos com Microsoft Excel e Power B.I </p>
+                            <a href="#" class="btn btn-primary">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://cryptoid.com.br/wp-content/uploads/2022/10/iStock-1202870693-e1665668400701.jpg"
+                            class="card-img-top" alt="projeto2">
+                        <div class="card-body">
+                            <h5 class="card-title">Automações</h5>
+                            <p class="card-text">Desenvolvidos com Microsoft VBA e I.A</p>
+                            <a href="#" class="btn btn-primary">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://blog.geekhunter.com.br/wp-content/uploads/2024/12/chris-ried-ieic5Tq8YMk-unsplash-scaled.jpg"
+                            class="card-img-top" alt="projeto3">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplicações web</h5>
+                            <p class="card-text">Desenvolvidos com html, css, js, php e bootstrap</p>
+                            <a href="#" class="btn btn-primary">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Habilidades Técnicas</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fab fa-html5 fa-3x text-danger mb-3"></i>
+                        <h3>HTML5</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fab fa-css3 fa-3x text-primary mb-3"></i>
+                        <h3>CSS 3</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fab fa-js fa-3x text-warning mb-3"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fab fa-bootstrap fa-3x text-dark mb-3"></i>
+                        <h3>Bootstrap</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fab fa-php fa-3x text-secondary mb-3"></i>
+                        <h3>PHP</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-file-excel fa-3x text-infor mb-3"></i>
+                        <h3>Excel</h3>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="img/lucas2.png" class="img-fluid rounded w-75" alt="Sobre Mim">
+                </div>
+                <div class="col-lg-6 text-justify text-muted">
+                    <h2>Sobre Mim</h2>
+                    <p>Acadêmico de ADS, profissional na área de engenheria de produto, apaixonado por dados e tudo que
+                        eles podem contar,
+                        decidi entrar num curso da área de tecnologia para me aproximar das ferramentas e da carreira
+                        que almeijo: cientista
+                        de dados;</p>
+                    <p>Trabalhar de maneira lógica e estruturada, identificar padrões, reduzir tarefas
+                        repetitivas e muitas vezes
+                        desnecessárias, gerenciar projetos, criar dashboards e KPI´s, enfim, construir informação de
+                        qualidade, que
+                        agreguem valor para as decisões estratégicas e crescimento do negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Sobre este portfólio</h5>
+                    <p class="text-secondary">Desenvolvido com HTML, CSS e Bootstrap 4.6.</p>
+                    <p class="text-secondary">&copy; 2026 Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio"
+                                class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Início</a>
+                        </li>
+                        <li><a href="#projetos"
+                                class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Projetos</a>
+                        </li>
+                        <li><a href="#contato"
+                                class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociais</h5>
+                    <!-- Ícones sociais -->
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/lucas-travassos" class="text-light" target="_blank"><i class="fab fa-github fa-2x"
+                                id="icone-footer"></i></a>
+                        <a href="https://www.linkedin.com/in/lucas-trvss/" class="text-light" target="_blank"><i
+                                class="fab fa-linkedin fa-2x" id="icone-footer"></i></a>
+                    </div>
+                    <hr>
+                    <p class="mb-0">lucasstravassos19@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
 </body>
 

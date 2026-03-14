@@ -13,7 +13,7 @@ main {
 }
 
 footer {
-    background-color: #343a40;
+    background-color: #CB9214;
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -25,4 +25,9 @@ nav {
 
 .jumbotron{
     background-color: #FBEFD5;
+}
+
+.card-img-custom{
+    height: 220px; /*força todas as imagens a terem o mesmo tamanho*/
+    object-fit: cover; /*corta o excesso da imagem sem distorcer*/
 }

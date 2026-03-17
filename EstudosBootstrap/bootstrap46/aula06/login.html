@@ -16,20 +16,40 @@
 </head>
 
 <body>
-    <div class="login-container">
-        <h2 class="login-title">Login</h2>
-        <form>
-            <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <div class="teste">
+                        <img class="img-login" src="img/tray.png" alt="tray">
+                    </div>
+                    <div class="teste2">
+                        <h1 class="display-4">O MESÃO</h1>
+                    </div>
+                    <p class="lead text-center">Sistema de gerenciamento de mesas</p>
+                        <hr class="my-4">
+                </div>
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Password">
+            <div class="col-sm centralizado">
+                <div class="login-container">
+                    <h2 class="login-title">Bem vindo</h2>
+                    <h6 class="login-subtitle">Faça login para acessar o painel</h6>
+                    <form action="#">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-block">Login</button>
+                        <div class="text-center mt-3">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-            <div class="text-center mt-3">
-                <a href="#">Forgot your password?</a>
-            </div>
-        </form>
+        </div>
     </div>
 
     <div>

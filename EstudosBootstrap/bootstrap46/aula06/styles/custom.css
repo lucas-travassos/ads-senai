@@ -1,15 +1,33 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #1D086C;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+.jumbotron {
+    background-color: #EA541D;
+    padding: 48px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.img-login {
+    background-color: #EA9568;
+    border-radius: 15px;
+    padding: 15px;
+    height: 150px;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.15);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
 .login-container {
     background-color: #fff;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -34,37 +52,18 @@ body {
     margin-bottom: 40px;
 }
 
-.jumbotron {
-    background-color: #007bff;
-    justify-content: center;
-    align-items: self-start;
-    height: 55vh;
-}
-
-.img-login {
-    background-color: rgb(255, 154, 117);
-    border-radius: 10px;
-    padding: 15px;
-    height: 150px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+.btn-login {
+    background-color: #1D086C;
 }
 
 .teste {
     display: flex;
-        justify-content: center;
-    align-items: center;
-}
-.teste2 {
-    display: flex;
-        justify-content: center;
+    justify-content: center;
     align-items: center;
 }
 
-/* 
-.centralizado {
+.teste2 {
     display: flex;
+    justify-content: center;
     align-items: center;
-    align-content: center;
-} */
+}

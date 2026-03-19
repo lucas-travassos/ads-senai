@@ -1,13 +1,96 @@
-    body {
-      background-color: #f8f9fa;
-    }
+body {
+  margin: 0;
+  background-color: #e9e9e9;
+}
 
-    .card-custom {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #0f1c3f;
+  color: white;
+  padding: 20px;
+}
 
-    .table-wrapper {
-      overflow-x: auto;
-    }
+.logo {
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #ccc;
+  margin: 5px 0;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  background-color: #1f2d5a;
+  color: white;
+}
+
+.active .nav-link {
+  background-color: #dcdcdc;
+  color: black;
+}
+
+/* LOGOUT */
+.logout {
+  font-size: 14px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+/* CONTEÚDO */
+.content {
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+/* STATUS BOX */
+.status-box {
+  background-color: #dcdcdc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* CARDS */
+.mesa-card {
+  background-color: #dcdcdc;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.mesa-card h3 {
+  font-size: 28px;
+}
+
+.mesa-card p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* CARD OCUPADO */
+.mesa-card.ocupada {
+  background-color: #f15a24;
+  color: black;
+}
+
+/* BADGES */
+.badge {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.card-custom {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+}

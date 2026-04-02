@@ -6,8 +6,8 @@
 
     $action = !empty($_GET['a']) ? $_GET['a'] : 'getAll';
 
-    $controller = new clientsController ();
+    $controller = new clientsController();
 
-    $controller->{$action};
+    $controller->{$action}();
 
 ?>

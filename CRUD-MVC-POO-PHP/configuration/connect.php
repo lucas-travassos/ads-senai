@@ -3,9 +3,9 @@
 <?php
     // definção de constantes
     define('HOST', 'localhost');
-    define('DATABASENAME', 'crud-mvcc-poo-php-lm');
+    define('DATABASENAME', 'crud-mvc-poo-php-lm');
     define('USER', 'root');
-    define('PASSWORD', 'root');
+    define('PASSWORD', '');
 
     class Connect{
         protected $connection;

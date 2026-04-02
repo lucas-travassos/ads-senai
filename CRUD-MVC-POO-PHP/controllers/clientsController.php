@@ -1,19 +1,19 @@
 <?php
 
-    require_once('./models/client.php');
+require_once('./models/client.php');
 
-    class clientsController{
-        private $model;
+class clientsController
+{
+    private $model;
 
-        function __construct()
-        {
-            $this->model =  new ClientModel ();
-        }
+    function __construct()
+    {
+        $this->model =  new ClientModel();
     }
 
     function getAll()
     {
         $resultData = $this->model->getAll();
-    }
-
-?>
+        require_once('./views/index.php');
+    }   
+}

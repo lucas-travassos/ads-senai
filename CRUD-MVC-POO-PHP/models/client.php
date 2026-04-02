@@ -12,11 +12,12 @@
             $this->table = 'clients';
         }
 
-        function getAll
+        function getAll()
         {
-            $sqlSelect = $this->connection->query("SELECT * FROM $this->");
+            $sqlSelect = $this->connection->query("SELECT * FROM $this->table");
             $resultQuery = $sqlSelect->fetchAll();
-        }
+            return $resultQuery;
+        }   
     }
 
 ?>

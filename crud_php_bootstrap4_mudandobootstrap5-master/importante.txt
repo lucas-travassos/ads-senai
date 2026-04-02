@@ -1,0 +1,11 @@
+add-users.php
+-seria a tela de visualizaçao onde tem editar, deletar, adiconar e pesquisa seria a view ou seja a tela
+
+edit-users.php
+-e onde fica o codigo de editar os dados
+
+config.php
+-seria a conexao com banco de dados
+
+add-users.php
+-cadastra usuarios

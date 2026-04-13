@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once '../modelo/Carro.php';
-require_once '../modelo/Fabrica.php';
+require_once '../model/Carro.php';
+require_once '../model/Fabrica.php';
 require_once '../includes/navbar.php';
 
 if (!isset($_SESSION['fabrica'])) {

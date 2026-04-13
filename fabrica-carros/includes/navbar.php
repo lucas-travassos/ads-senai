@@ -5,7 +5,7 @@ function renderNavbar()
     <header class="navbar-professional">
         <div class="navbar-container">
             <div class="navbar-brand">
-                <a href="../visualizacao/index.php" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
+                <a href="../views/index.php" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
                     <div class="logo-icon">
                         <img src="../assets/img/logo_inovadora.png" alt="Logo Inovadora" style="height: 40px;">
                     </div>
@@ -21,7 +21,7 @@ function renderNavbar()
 
                     <!-- Home -->
                     <li class="nav-item">
-                        <a href="../visualizacao/index.php" class="nav-link">
+                        <a href="../views/index.php" class="nav-link">
                             <span class="nav-icon">
                                 <img src="../assets/img/casa.png" alt="Home" style="width: 20px; height: 20px;">
                             </span>
@@ -31,7 +31,7 @@ function renderNavbar()
 
                     <!-- Fabricar -->
                     <li class="nav-item">
-                        <form action="../controlador/processa.php" method="POST" class="nav-form">
+                        <form action="../controllers/processa.php" method="POST" class="nav-form">
                             <input type="hidden" name="acao" value="fabricar">
                             <button type="submit" class="nav-link nav-button">
                                 <span class="nav-icon">
@@ -44,7 +44,7 @@ function renderNavbar()
 
                     <!-- Vender -->
                     <li class="nav-item">
-                        <form action="../controlador/processa.php" method="POST" class="nav-form">
+                        <form action="../controllers/processa.php" method="POST" class="nav-form">
                             <input type="hidden" name="acao" value="vender">
                             <button type="submit" class="nav-link nav-button">
                                 <span class="nav-icon">
@@ -57,7 +57,7 @@ function renderNavbar()
 
                     <!-- Estoque -->
                     <li class="nav-item">
-                        <form action="../controlador/processa.php" method="POST" class="nav-form">
+                        <form action="../controllers/processa.php" method="POST" class="nav-form">
                             <input type="hidden" name="acao" value="ver_info">
                             <button type="submit" class="nav-link nav-button">
                                 <span class="nav-icon">
@@ -70,7 +70,7 @@ function renderNavbar()
 
                     <!-- Finalizar Sessão -->
                     <li class="nav-item">
-                        <form action="../controlador/processa.php" method="POST" class="nav-form">
+                        <form action="../controllers/processa.php" method="POST" class="nav-form">
                             <input type="hidden" name="acao" value="finalizar_sessao">
                             <button type="submit" class="nav-link nav-button nav-danger">
                                 <span class="nav-icon">

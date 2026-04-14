@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="form-actions">
                                 <button type="submit" class="btn-primary">Avançar</button>
-                                <a href="../visualizacao/index.php" class="btn-secondary">Cancelar</a>
+                                <a href="../views/index.php" class="btn-secondary">Cancelar</a>
                             </div>
                         </form>
                     </div>
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="container">
                         <div class="message-container">
                             <h2 class="error">Quantidade inválida!</h2>
-                            <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu</a>
+                            <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
                         </div>
                     </div>';
                 break;
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $conteudoBody .= '          <div class="form-actions">
                                 <button type="submit" class="btn-primary">Fabricar Carros</button>
-                                <a href="../visualizacao/index.php" class="btn-secondary">Cancelar</a>
+                                <a href="../views/index.php" class="btn-secondary">Cancelar</a>
                             </div>
                         </form>
                     </div>
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="message-container">
                         <h2 class="success">' . ($quantidade === 1 ? 'Carro fabricado com sucesso!' : 'Carros fabricados com sucesso!') . '</h2>
                         <p>' . $quantidade . ' carro(s) adicionado(s) à fábrica.</p>
-                        <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu</a>
+                        <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
                     </div>
                 </div>';
             break;
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="container">
                         <div class="message-container">
                             <h2 class="warning">Nenhum carro disponível para venda!</h2>
-                            <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu</a>
+                            <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
                         </div>
                     </div>';
                 break;
@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             
                             <div class="form-actions">
                                 <button type="submit" class="btn-primary">Vender Carro</button>
-                                <a href="../visualizacao/index.php" class="btn-secondary">Cancelar</a>
+                                <a href="../views/index.php" class="btn-secondary">Cancelar</a>
                             </div>
                         </form>
                     </div>
@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="container">
                         <div class="message-container">
                             <h2 class="error">Modelo e cor são obrigatórios!</h2>
-                            <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu</a>
+                            <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
                         </div>
                     </div>';
                 break;
@@ -252,7 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <h2 class="success">Carro vendido com sucesso!</h2>
                             <p><strong>Modelo:</strong> ' . htmlspecialchars($modelo) . '</p>
                             <p><strong>Cor:</strong> ' . htmlspecialchars($cor) . '</p>
-                            <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu</a>
+                            <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
                         </div>
                     </div>';
             } else {
@@ -261,7 +261,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="message-container">
                             <h2 class="error">Carro não encontrado!</h2>
                             <p>Não foi encontrado um carro com modelo "' . htmlspecialchars($modelo) . '" e cor "' . htmlspecialchars($cor) . '" na fábrica.</p>
-                            <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu</a>
+                            <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
                         </div>
                     </div>';
             }
@@ -283,13 +283,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="message-container">
                         <h2>Sessão finalizada!</h2>
                         <p>Todos os dados da fábrica foram apagados.</p>
-                        <a href="../visualizacao/index.php" class="btn-primary">Voltar ao menu inicial</a>
+                        <a href="../views/index.php" class="btn-primary">Voltar ao menu inicial</a>
                     </div>
                 </div>';
             break;
 
         default:
-            $conteudoBody = '<h2>Ação inválida.</h2><a href="../visualizacao/index.php">Voltar ao menu</a>';
+            $conteudoBody = '<h2>Ação inválida.</h2><a href="../views/index.php">Voltar ao menu</a>';
             break;
     }
 

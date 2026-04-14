@@ -1,7 +1,5 @@
 <?php
 
-require_once('../config/database.php');
-
 class Carro
 {
     private string $modelo;

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Carro.php';
+require_once 'CarroModel.php';
 
 class Fabrica
 {
@@ -16,31 +17,22 @@ class Fabrica
         $this->carros = $carros;
     }
 
-    public function fabricarCarro(int $quantidade, array $dadosCarros = []): void
+    public function fabricarCarro($quantidade, $dados)
     {
+        $carroModel = new CarroModel();
+
         for ($i = 0; $i < $quantidade; $i++) {
-            $modelo = $dadosCarros["modelo_{$i}"] ?? '';
-            $cor = $dadosCarros["cor_{$i}"] ?? '';
 
-            if (!empty($modelo) && !empty($cor)) {
-                $carro = new Carro($modelo, $cor);
+            $modelo = $dados["modelo_$i"];
+            $cor = $dados["cor_$i"];
 
-                // Atributos opcionais
-                if (!empty($dadosCarros["ano_{$i}"])) {
-                    $carro->setAno($dadosCarros["ano_{$i}"]);
-                }
-                if (!empty($dadosCarros["marca_{$i}"])) {
-                    $carro->setMarca($dadosCarros["marca_{$i}"]);
-                }
-                if (!empty($dadosCarros["placa_{$i}"])) {
-                    $carro->setPlaca($dadosCarros["placa_{$i}"]);
-                }
-                if (!empty($dadosCarros["preco_{$i}"])) {
-                    $carro->setPreco((float)$dadosCarros["preco_{$i}"]);
-                }
+            $carro = new Carro($modelo, $cor);
 
-                $this->carros[] = $carro;
-            }
+            // mantém na sessão (se quiser continuar usando)
+            $this->carros[] = $carro;
+
+            // 🔥 SALVA NO BANCO
+            $carroModel->salvar($carro);
         }
     }
 

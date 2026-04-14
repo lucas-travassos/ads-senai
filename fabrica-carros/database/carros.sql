@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/04/2026 às 02:11
+-- Tempo de geração: 14/04/2026 às 00:42
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -30,11 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `carros` (
   `id` int(11) NOT NULL,
   `modelo` varchar(20) NOT NULL,
-  `cor` varchar(20) NOT NULL,
-  `marca` varchar(20) NOT NULL,
-  `ano` int(4) NOT NULL,
-  `placa` varchar(12) NOT NULL,
-  `preço` decimal(10,0) NOT NULL
+  `cor` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

@@ -23,4 +23,12 @@ class CarroModel
 
         return $stmt->execute();
     }
+
+    public function listar()
+    {
+        $conn = $this->conn;
+        $stmt = $conn->prepare("SELECT * FROM carros");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

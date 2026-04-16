@@ -1,13 +1,12 @@
 <?php
 
-session_start();
 require_once '../model/Carro.php';
 require_once '../model/Fabrica.php';
 require_once '../includes/navbar.php';
 
-if (!isset($_SESSION['fabrica'])) {
-    $_SESSION['fabrica'] = serialize(new Fabrica());
-}
+// if (!isset($_SESSION['fabrica'])) {
+//     $_SESSION['fabrica'] = serialize(new Fabrica());
+// }
 
 $conteudoBody = '';
 
@@ -107,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         case 'finalizar_fabricacao':
             $quantidade = (int)($_POST['quantidade'] ?? 0);
-            $fabrica = unserialize($_SESSION['fabrica']);
+            $fabrica = new Fabrica();
 
             $fabrica->fabricarCarro($quantidade, $_POST);
             $_SESSION['fabrica'] = serialize($fabrica);
@@ -268,7 +267,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
 
         case 'ver_info':
-            $fabrica = unserialize($_SESSION['fabrica']);
+            $fabrica = new Fabrica();
             $conteudoBody = '
                 <div class="container" style="padding: 40px 20px;">
                     <div class="form-container">' . $fabrica->listarCarros() . '</div>
@@ -286,6 +285,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <a href="../views/index.php" class="btn-primary">Voltar ao menu inicial</a>
                     </div>
                 </div>';
+            break;
+
+        case 'excluir':
+            $id = $_POST['id'] ?? null;
+
+            if (!$id) {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="error">ID inválido!</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar</a>
+                </div>
+            </div>';
+                break;
+            }
+
+            $fabrica = new Fabrica();
+
+            if ($fabrica->excluirCarro($id)) {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="success">Carro excluído com sucesso!</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
+                </div>
+            </div>';
+            } else {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="error">Erro ao excluir carro!</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar</a>
+                </div>
+            </div>';
+            }
             break;
 
         default:

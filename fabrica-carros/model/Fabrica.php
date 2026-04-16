@@ -28,58 +28,57 @@ class Fabrica
 
             $carro = new Carro($modelo, $cor);
 
-            // mantém na sessão (se quiser continuar usando)
             $this->carros[] = $carro;
 
-            // 🔥 SALVA NO BANCO
             $carroModel->salvar($carro);
         }
     }
 
-    public function venderCarro(string $modelo, string $cor): bool
+    public function excluirCarro(int $id): bool
     {
-        foreach ($this->carros as $index => $carro) {
-            if ($carro->getModelo() === $modelo && $carro->getCor() === $cor) {
-                unset($this->carros[$index]);
-                $this->carros = array_values($this->carros); // Reindexa o array
-                return true;
-            }
-        }
-        return false;
+        $carroModel = new CarroModel();
+        return $carroModel->excluir($id);
     }
+
+    // public function venderCarro(string $modelo, string $cor): bool
+    // {
+    //     foreach ($this->carros as $index => $carro) {
+    //         if ($carro->getModelo() === $modelo && $carro->getCor() === $cor) {
+    //             unset($this->carros[$index]);
+    //             $this->carros = array_values($this->carros); // Reindexa o array
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 
     public function listarCarros(): string
     {
-        if (empty($this->carros)) {
+        $carroModel = new CarroModel();
+        $carros = $carroModel->listar();
+
+        if (empty($carros)) {
             return "<h2>Lista de Carros</h2><p>Nenhum carro fabricado ainda.</p>";
         }
 
         $info = "<h2>Lista de Carros Fabricados</h2>";
-        $info .= "<p><strong>Total de carros:</strong> " . count($this->carros) . "</p>";
+        $info .= "<p><strong>Total de carros:</strong> " . count($carros) . "</p>";
         $info .= "<hr style='margin: 20px 0; border: none; border-top: 2px solid #e0e0e0;'>";
 
-        foreach ($this->carros as $index => $carro) {
+        foreach ($carros as $carro) {
             $info .= "<div class='carro-card'>";
-            $info .= "<h3>Carro #" . ($index + 1) . "</h3>";
-            $info .= "<p><strong>Modelo:</strong> " . htmlspecialchars($carro->getModelo()) . "</p>";
-            $info .= "<p><strong>Cor:</strong> " . htmlspecialchars($carro->getCor()) . "</p>";
+            $info .= "<h3>Carro #" . ($carro['id']) . "</h3>";
+            $info .= "<p><strong>Modelo:</strong> " . htmlspecialchars($carro['modelo']) . "</p>";
+            $info .= "<p><strong>Cor:</strong> " . htmlspecialchars($carro['cor']) . "</p>";
 
-            if ($carro->getMarca() !== null) {
-                $info .= "<p><strong>Marca:</strong> " . htmlspecialchars($carro->getMarca()) . "</p>";
-            }
-            if ($carro->getAno() !== null) {
-                $info .= "<p><strong>Ano:</strong> " . htmlspecialchars($carro->getAno()) . "</p>";
-            }
-            if ($carro->getPlaca() !== null) {
-                $info .= "<p><strong>Placa:</strong> " . htmlspecialchars($carro->getPlaca()) . "</p>";
-            }
-            if ($carro->getPreco() !== null) {
-                $info .= "<p><strong>Preço:</strong> R$ " . number_format($carro->getPreco(), 2, ',', '.') . "</p>";
-            }
+            $info .= "<form method='POST' action='../controllers/processa.php' style='margin-top:10px;'>";
+            $info .= "<input type='hidden' name='acao' value='excluir'>";
+            $info .= "<input type='hidden' name='id' value='" . $carro['id'] . "'>";
+            $info .= "<button type='submit'>Excluir</button>";
+            $info .= "</form>";
 
             $info .= "</div>";
         }
-
         return $info;
     }
 

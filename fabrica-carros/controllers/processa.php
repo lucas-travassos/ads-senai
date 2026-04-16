@@ -322,6 +322,103 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             break;
 
+        case 'editar':
+            $id = $_POST['id'] ?? null;
+
+            if (!$id) {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="error">ID inválido!</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar</a>
+                </div>
+            </div>';
+                break;
+            }
+
+            $carroModel = new CarroModel();
+            $carro = $carroModel->buscarPorId((int)$id);
+
+            if (!$carro) {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="error">Carro não encontrado!</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar</a>
+                </div>
+            </div>';
+                break;
+            }
+
+            $conteudoBody = '
+        <div class="container">
+            <div class="form-container">
+                <h2>Editar Carro</h2>
+
+                <form action="processa.php" method="POST">
+                    <input type="hidden" name="acao" value="atualizar">
+                    <input type="hidden" name="id" value="' . $carro['id'] . '">
+
+                    <div class="form-group">
+                        <label><strong>Modelo:</strong></label>
+                        <input type="text" name="modelo" value="' . htmlspecialchars($carro['modelo']) . '" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Cor:</strong></label>
+                        <input type="text" name="cor" value="' . htmlspecialchars($carro['cor']) . '" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Salvar Alterações</button>
+                        <a href="../views/index.php" class="btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>';
+            break;
+
+        case 'atualizar':
+            $id = $_POST['id'] ?? null;
+            $modelo = trim($_POST['modelo'] ?? '');
+            $cor = trim($_POST['cor'] ?? '');
+
+            if (!$id || $modelo === '' || $cor === '') {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="error">Dados inválidos! Modelo e cor são obrigatórios.</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar</a>
+                </div>
+            </div>';
+                break;
+            }
+
+            $carro = new Carro($modelo, $cor);
+            $carroModel = new CarroModel();
+
+            if ($carroModel->atualizar((int)$id, $carro)) {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="success">Carro atualizado com sucesso!</h2>
+                    <p><strong>ID:</strong> ' . htmlspecialchars($id) . '</p>
+                    <p><strong>Novo modelo:</strong> ' . htmlspecialchars($modelo) . '</p>
+                    <p><strong>Nova cor:</strong> ' . htmlspecialchars($cor) . '</p>
+                    <a href="../views/index.php" class="btn-primary">Voltar ao menu</a>
+                </div>
+            </div>';
+            } else {
+                $conteudoBody = '
+            <div class="container">
+                <div class="message-container">
+                    <h2 class="error">Erro ao atualizar carro!</h2>
+                    <a href="../views/index.php" class="btn-primary">Voltar</a>
+                </div>
+            </div>';
+            }
+            break;
+
         default:
             $conteudoBody = '<h2>Ação inválida.</h2><a href="../views/index.php">Voltar ao menu</a>';
             break;

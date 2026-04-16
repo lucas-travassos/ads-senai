@@ -32,6 +32,30 @@ class CarroModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function buscarPorId(int $id)
+    {
+        $sql = "SELECT * FROM carros WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function atualizar(int $id, Carro $carro): bool
+    {
+        $sql = "UPDATE carros 
+                SET modelo = :modelo, cor = :cor 
+                WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':modelo', $carro->getModelo());
+        $stmt->bindValue(':cor', $carro->getCor());
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }    
+
     public function excluir(int $id): bool
     {
         $sql = "DELETE FROM carros WHERE id = :id";
@@ -41,5 +65,5 @@ class CarroModel
         return $stmt->execute();
     }
 
-    
+
 }

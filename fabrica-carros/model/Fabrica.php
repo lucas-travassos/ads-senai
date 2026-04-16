@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Carro.php';
-require_once 'CarroModel.php';
+require_once '../model/Carro.php';
+require_once '../model/CarroModel.php';
 
 class Fabrica
 {
@@ -71,6 +71,14 @@ class Fabrica
             $info .= "<p><strong>Modelo:</strong> " . htmlspecialchars($carro['modelo']) . "</p>";
             $info .= "<p><strong>Cor:</strong> " . htmlspecialchars($carro['cor']) . "</p>";
 
+            // BOTÃO EDITAR
+            $info .= "<form method='POST' action='../controllers/processa.php' style='margin-top:10px;'>";
+            $info .= "<input type='hidden' name='acao' value='editar'>";
+            $info .= "<input type='hidden' name='id' value='" . $carro['id'] . "'>";
+            $info .= "<button type='submit'>Editar</button>";
+            $info .= "</form>";
+
+            // BOTÃO EXCLUIR
             $info .= "<form method='POST' action='../controllers/processa.php' style='margin-top:10px;'>";
             $info .= "<input type='hidden' name='acao' value='excluir'>";
             $info .= "<input type='hidden' name='id' value='" . $carro['id'] . "'>";
